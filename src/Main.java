@@ -91,17 +91,21 @@ void main() {
 
     System.out.println("\nEJERCICIO 4 \n");
     int num = Depurar.entero("Dime un número y te lo pasare a binario", new Scanner(System.in));
-    Pila<Integer> binarios = new Pila<>();
-    //Divido entre 2 hasta que el número sea 0
-    while (num != 0) {
-        int resto = num % 2;
-        binarios.push(resto);
-        num = num / 2;
+    if (num == 0) {
+        System.out.println("El resultado es: 0");
+    } else {
+        Pila<Integer> binarios = new Pila<>();
+        //Divido entre 2 hasta que el número sea 0
+        while (num != 0) {
+            int resto = num % 2;
+            binarios.push(resto);
+            num = num / 2;
+        }
+        String resultado = "";
+        //Añado la pila a una variable y luego la muestro
+        while (!binarios.isEmpty()) {
+            resultado = resultado + binarios.pop();
+        }
+        System.out.println("El resultado es: " + resultado);
     }
-    String resultado = "";
-    //Añado la pila a una variable y luego la muestro
-    while (!binarios.isEmpty()) {
-        resultado = resultado + binarios.pop();
-    }
-    System.out.println("El resultado es: " + resultado);
 }
