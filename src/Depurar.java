@@ -43,4 +43,18 @@ public class Depurar {
 		return n;
 	}
 
+	//Depura para que el String para que sea una unica palabra
+	public static String palabra(String texto, Scanner sc) {
+		String n="";
+		boolean unaPalabra=true;
+		do {
+			System.out.println(texto);
+			n=sc.nextLine().trim();
+			if(n.contains(" ")){
+			unaPalabra=false;
+			}
+		}while(n.isEmpty() || !unaPalabra);
+		return n;
+	}
+
 }
