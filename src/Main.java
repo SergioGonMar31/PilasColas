@@ -2,6 +2,7 @@ void main() {
 
     //EJERCICIO 1
 
+    System.out.println("\nEJERCICIO 1 \n");
     Pila<Character> pila = new Pila<>();
     String texto = Depurar.texto("Escribe algo y te lo invertire: ", new Scanner(System.in));
 
@@ -19,6 +20,7 @@ void main() {
     System.out.print("La frase invertida es: " + inverso);
 
     //EJERCICIO 2
+    System.out.println("\nEJERCICIO 2 \n");
     Cola<String> cola = new Cola<>();
     Boolean salir = false;
 
@@ -59,6 +61,7 @@ void main() {
 
     //EJERCICIO 3
 
+    System.out.println("\nEJERCICIO 3 \n");
     Pila<Character> pila2 = new Pila<>();
     Cola<Character> cola2 = new Cola<>();
     String palabra = Depurar.palabra("Escribe una palabra y comprobare que es palíndroma: ", new Scanner(System.in)).toLowerCase();
@@ -71,41 +74,32 @@ void main() {
         cola2.add(palabra.charAt(i));
     }
 
-    System.out.println("USANDO PILA");
-    //Añado los elementos de la pila a la variable invertida
-    while (!pila2.isEmpty()) {
-        invertida = invertida.trim() + pila2.pop();
-    }
-    //Compruebo
-    if (invertida.equals(palabra)) {
-        System.out.println("La palabra " + palabra + " es palíndroma");
-    } else {
-        System.out.println("La palabra " + palabra + " no es palíndroma");
+    boolean iguales = true;
+    //Compruebo valor a valor si son iguales
+    while (!pila2.isEmpty() && !cola2.isEmpty()) {
+        if (!pila2.pop().equals(cola2.remove())) {
+            iguales = false;
+        }
     }
 
-  /* System.out.println("USANDO COLA");
-    invertida = "";
-    //Voy quitando el ultimo elemento (Al quitar un elemento apar
-    while(!cola2.isEmpty()){
-        invertida = invertida.trim() + cola2.remove();
-    }
-    //Compruebo
-    if (invertida.equals(palabra)) {
+    if (iguales) {
         System.out.println("La palabra " + palabra + " es palíndroma");
     } else {
         System.out.println("La palabra " + palabra + " no es palíndroma");
     }
-    */
-    
     //Ejercicio 4
+
+    System.out.println("\nEJERCICIO 4 \n");
     int num = Depurar.entero("Dime un número y te lo pasare a binario", new Scanner(System.in));
     Pila<Integer> binarios = new Pila<>();
+    //Divido entre 2 hasta que el número sea 0
     while (num != 0) {
         int resto = num % 2;
         binarios.push(resto);
         num = num / 2;
     }
     String resultado = "";
+    //Añado la pila a una variable y luego la muestro
     while (!binarios.isEmpty()) {
         resultado = resultado + binarios.pop();
     }
