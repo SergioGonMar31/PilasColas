@@ -35,13 +35,22 @@ public class Cola<T> {
     //Metodo que recorre los nodos para mostrarlos
     public void mostrar() {
         if (frente == null) {
-            System.out.println("(cola vacía)");
+            System.out.println("La cola está vacía.");
             return;
         }
         int pos = 1;
         //For que recorre los distintos nodos hasta encontrar uno null (Ya no hay más)
-            for (Nodo<T> actual = frente; actual != null; actual = actual.getSiguiente()) {
-                System.out.println("  " + pos++ + ". " + actual.getDato());
-            }
+        for (Nodo<T> actual = frente; actual != null; actual = actual.getSiguiente()) {
+            System.out.println("  " + pos++ + ". " + actual.getDato());
+        }
+    }
+
+    public String elemento(){
+        if (frente == null) {
+            return "La cola está vacía.";
+        }
+
+        return frente.getDato().toString();
+
     }
 }

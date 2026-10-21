@@ -19,10 +19,10 @@ void main() {
     System.out.print("La frase invertida es: " + inverso);
 
     //EJERCICIO 2
-    Queue<String> cola = new LinkedList<>();
+    Cola<String> cola = new Cola<>();
     Boolean salir = false;
     while (!salir) {
-        String opcion = Depurar.texto("\n \nCOLA CLIENTES\n" + "1. Llegada\n" + "2. Atender\n" + "3. Mostrar cola\n" + "4. Salir", new Scanner(System.in));
+        String opcion = Depurar.texto("\nCOLA CLIENTES\n" + "1. Llegada\n" + "2. Atender\n" + "3. Mostrar cola\n" + "4. Salir", new Scanner(System.in));
         switch (opcion) {
             case "1":
                 String persona = Depurar.texto("Introduce un cliente", new Scanner(System.in));
@@ -32,7 +32,7 @@ void main() {
                 if (cola.isEmpty()) {
                     System.out.println("La cola esta vacia");
                 } else {
-                    System.out.println(cola.element());
+                    System.out.println(cola.elemento());
                     cola.remove();
                 }
                 break;
@@ -41,10 +41,7 @@ void main() {
                 if (cola.isEmpty()) {
                     System.out.println("La cola esta vacia");
                 } else {
-                    for (String a : cola) {
-                        i++;
-                        System.out.println(i + "º " + a);
-                    }
+                    cola.mostrar();
                 }
                 break;
             case "4":
