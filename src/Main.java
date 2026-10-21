@@ -4,7 +4,7 @@ void main() {
 
     //EJERCICIO 1
 
-    Deque<Character> pila = new ArrayDeque<>();
+    Pila<Character> pila = new Pila<>();
     String texto = Depurar.texto("Escribe algo y te lo invertire: ", new Scanner(System.in));
 
     for (int i = 0; i < texto.length(); i++) {
