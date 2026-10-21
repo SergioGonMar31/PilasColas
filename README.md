@@ -2,17 +2,6 @@
  
 Aplicación de consola en Java que resuelve cuatro ejercicios usando **Pilas** y **Colas** implementadas desde cero. Ambas estructuras comparten una misma clase `Nodo<T>`.
  
-## Estructura del proyecto
- 
-```
-EstructurasNodo/
-├── Nodo.java    # Nodo genérico (dato + referencia al siguiente)
-├── Pila.java    # Pila (LIFO) construida sobre Nodo<T>
-├── Cola.java    # Cola (FIFO) construida sobre Nodo<T>
-├── Main.java    # Menú principal y los 4 ejercicios
-└── README.md
-```
- 
 ## Diseño y reutilización de código
  
 La clase `Nodo<T>` es la única pieza de almacenamiento. `Pila<T>` y `Cola<T>` la reutilizan y solo añaden su lógica propia:
